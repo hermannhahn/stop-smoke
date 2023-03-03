@@ -10,8 +10,8 @@ __pycache__/
 .Python
 build/
 develop-eggs/
-dist/
 downloads/
+locale/
 eggs/
 .eggs/
 lib/
@@ -22,9 +22,11 @@ var/
 wheels/
 pip-wheel-metadata/
 share/python-wheels/
+.vscode/
 *.egg-info/
 .installed.cfg
 *.egg
+smoking.db
 MANIFEST
 
 # PyInstaller
