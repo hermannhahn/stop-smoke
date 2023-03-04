@@ -32,11 +32,8 @@ smoking.db
 MANIFEST
 *.lnk
 src/build/
-dist/locales/
-dist/icon.ico
-dist/smoking.db
-dist/stop-smoke.exe
-dist/stop-smoke.spec
+dist/
+*.spec
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
