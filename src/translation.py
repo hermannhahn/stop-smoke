@@ -7,6 +7,7 @@ LANG = locale.getlocale()[0]
 if not LANG:
     LANG = 'en_US'
 
+LANG = 'en_US'
 # Set the path to the translation files
 LOCALES_DIR = "locales" # /LC_MESSAGES/stop-smoke.mo
  
