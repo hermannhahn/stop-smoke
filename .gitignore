@@ -31,7 +31,7 @@ share/python-wheels/
 smoking.db
 MANIFEST
 *.lnk
-
+src/build/
 
 # PyInstaller
 #  Usually these files are written by a python script from a template

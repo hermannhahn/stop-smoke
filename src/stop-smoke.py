@@ -1,4 +1,5 @@
 import tkinter as tk
+import tkinter.simpledialog as simpledialog
 import time
 import sqlite3
 import os
@@ -54,9 +55,10 @@ class StopSmokingApp(tk.Frame):
         self.c.execute("SELECT * FROM smoking")
         data = self.c.fetchone()
         if data is None:
-            # Se não houver dados no banco de dados, inicializa o intervalo em 15 minutos
-            # e a data da última vez que fumou como a hora atual
-            self.wait_time = 15 * 60
+            # Se não houver dados no banco de dados, pergunte ao usuário com uma janela
+            # gráfica qual será o intervalo incial e inicializa o intervalo de acordo
+            # com a resposta e a data da última vez que fumou como a hora atual
+            self.wait_time = int(simpledialog.askinteger(gettext.translation("stop-smoke", localedir=LOCALES_DIR, languages=[LANG]).gettext("Stop Smoking"), gettext.translation("stop-smoke", localedir=LOCALES_DIR, languages=[LANG]).gettext("How many minutes do you want to wait between smokes?"), parent=self.master)) * 60
             self.last_smoke = time.time() - self.wait_time
             self.c.execute("INSERT INTO smoking VALUES (?, ?)", (self.last_smoke, self.wait_time))
             self.conn.commit()
