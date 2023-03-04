@@ -1,0 +1,38 @@
+# Stop Smoke Translation
+# Copyright (C) 2023
+# This file is distributed under the same license as the PACKAGE package.
+# AUTHOR <hermannhhahn@gmail.com>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-03-03 23:31-0300\n"
+"PO-Revision-Date: 2023-03-03 23:31-0300\n"
+"Last-Translator: Hermann Hahn <hermannhhahn@gmail.com>\n"
+"Language-Team: NO TEAM\n"
+"Language: en\n"
+"MIME-Version: 1.0
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit
+
+#: stop-smoke.py:29 stop-smoke.py:114
+msgid "Stop Smoking"
+msgstr "Stop Smoking"
+
+#: stop-smoke.py:73 stop-smoke.py:111
+msgid "Time left: {} minutes"
+msgstr "Time left: {} minutes"
+
+#: stop-smoke.py:78
+msgid "Smoke"
+msgstr "Smoke"
+
+#: stop-smoke.py:107
+msgid "Free to Smoke"
+msgstr "Free to Smoke"
+
+#: stop-smoke.py:118
+msgid "You can smoke again"
+msgstr "You can smoke again"
