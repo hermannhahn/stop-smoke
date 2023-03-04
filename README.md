@@ -1,2 +1,3 @@
-# stop-smoke
-Aplicativo para parar de fumar.
+# Stop Smoking
+
+App to help you stop smoking.
