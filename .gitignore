@@ -23,12 +23,15 @@ wheels/
 pip-wheel-metadata/
 share/python-wheels/
 .vscode/
+.vs/
+.vscode-test/
 *.egg-info/
 .installed.cfg
 *.egg
 smoking.db
 MANIFEST
 *.lnk
+
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
