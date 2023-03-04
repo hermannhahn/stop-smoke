@@ -72,7 +72,7 @@ class StopSmokingApp(tk.Frame):
     def create_widgets(self):
         # Cria um rótulo para exibir o tempo restante até poder fumar novamente
         self.time_left_label = tk.Label(self)
-        self.time_left_label["text"] = gettext.translation("stop-smoke", localedir=LOCALES_DIR, languages=[LANG]).gettext("Time left: {} minutes").format(int(max(0, self.last_smoke + self.wait_time - time.time()) / 60))
+        self.time_left_label["text"] = gettext.translation("stop-smoke", localedir=LOCALES_DIR, languages=[LANG]).gettext("Time left: {} minutes").format(int(max(0, self.last_smoke + self.wait_time - time.time()) / 60) + 1)
         self.time_left_label.pack(pady=15)
 
         # Cria um botão para registrar quando fumar
@@ -110,7 +110,7 @@ class StopSmokingApp(tk.Frame):
             # Atualiza o estado do botão de fumar
             self.smoke_button["state"] = "disabled"
             # Exibe o tempo restante na linguagem do sistema
-            self.time_left_label["text"] = gettext.translation("stop-smoke", localedir=LOCALES_DIR, languages=[LANG]).gettext("Time left: {} minutes").format(int(max(0, self.last_smoke + self.wait_time - time.time()) / 60))
+            self.time_left_label["text"] = gettext.translation("stop-smoke", localedir=LOCALES_DIR, languages=[LANG]).gettext("Time left: {} minutes").format(int(max(0, self.last_smoke + self.wait_time - time.time()) / 60) + 1)
         else:
             # Atualize o titulo da janela
             self.master.title(gettext.translation("stop-smoke", localedir=LOCALES_DIR, languages=[LANG]).gettext("Free to Smoke"))
