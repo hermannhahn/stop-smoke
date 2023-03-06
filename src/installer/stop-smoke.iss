@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Stop Smoke"
-#define MyAppVersion "1.3"
+#define MyAppVersion "1.4"
 #define MyAppPublisher "Hermann Hahn"
 #define MyAppURL "https://github.com/hermannhahn/stop-smoke"
 #define MyAppExeName "stop-smoke.exe"

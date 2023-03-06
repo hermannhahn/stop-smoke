@@ -7,16 +7,43 @@
 # Date: 2021-03-21                              #
 #################################################
 
-echo "Starting Translation Update"
-
-# Get Project-Id-Version from command line
-# If VERSION is --help, None or /?, print help and exit
+# Get version number from command line argument
 VERSION=$1
-if [ "$VERSION" = "--help" ] || [ "$VERSION" = "" ] || [ "$VERSION" = "/?" ]; then
-    echo "Usage: ./update-translations.sh VERSION"
-    echo "VERSION is the version number of the software or translation."
+
+# Help
+if [ "$VERSION" = "--help" ] || [ "$VERSION" = "/?" ]; then
+    echo "Update translation files help:"
+    echo ""
+    echo "Usage: ./update.sh VERSION"
+    echo ""
+    echo "VERSION is the version number of the software."
     exit 0
 fi
+
+# Check if version number is given
+if [ "$VERSION" = "" ]; then
+    echo ""
+    echo "[ERROR] Missing argument VERSION"
+    echo ""
+    echo "Usage: ./update.sh VERSION"
+    echo ""
+    echo "VERSION is the version number of the software."
+    exit 0
+fi
+
+# Check if version number is valid
+if [[ ! $VERSION =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+    echo ""
+    echo "[ERROR] Invalid version number"
+    echo ""
+    echo "Ex: ./update.sh 1.0.0"
+    echo ""
+    echo "VERSION is the version number of the software."
+    exit 0
+fi
+
+# Start translation update
+echo "Starting Translation Update"
 
 # Initialize variables
 AUTHOR="Hermann Hahn"

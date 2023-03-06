@@ -1,17 +1,7 @@
 #!/bin/bash
 
-# Define o caminho do arquivo a ser pesquisado
-file_path="../locales/en/LC_MESSAGES/stop-smoke.po"
+project_version=$(grep -oP 'Project-Id-Version:\s*\K[0-9.]+' ../locales/en/LC_MESSAGES/stop-smoke.po)
+project_version=$(echo "$project_version" | tr -d '\0')
+sed -i "s/\(#define MyAppVersion \)\"[^\"]*\"/\1\"$project_version\"/" stop-smoke.iss
 
-# Usa o comando grep para procurar a linha desejada e, em seguida, usa o comando sed para extrair o valor
-version=$(grep "Project-Id-Version:" "$file_path" | sed 's/[^0-9\.]*//g' | tr -d '\n')
-
-# Exibe o valor da versão no console
-echo "Versão: $version"
-
-
-
-# Update version in .iss file in MyAppVersion variable
-#sed -i "s/MyAppVersion*/MyAppVersion $VERSION/g" stop-smoke.iss
-
-#ISCC.exe stop-smoke.iss
+ISCC.exe stop-smoke.iss
