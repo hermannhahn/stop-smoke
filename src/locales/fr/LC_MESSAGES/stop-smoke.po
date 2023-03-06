@@ -2,12 +2,12 @@
 # Copyright (C) 2023 THE stop-smoke'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the stop-smoke package.
 # Automatically generated, 2023.
-#
+# 
 msgid ""
 msgstr ""
-"Project-Id-Version: stop-smoke 1.2\n"
+"Project-Id-Version: 1.4\n"
 "Report-Msgid-Bugs-To: hermann.h.hahn@gmail.com\n"
-"POT-Creation-Date: 2023-03-05 21:43-0300\n"
+"POT-Creation-Date: 2023-03-06 01:11-0300\n"
 "PO-Revision-Date: 2023-03-05 18:01-0300\n"
 "Last-Translator: Hermann Hahn <hermann.h.hahn@gmail.com>\n"
 "Language-Team: none\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ../about.py:23 ../gui.py:84
+#: ../about.py:23 ../gui.py:86
 msgid "About"
 msgstr "À propos"
 
@@ -26,11 +26,12 @@ msgid "STOP SMOKE"
 msgstr "ARRÊTEZ DE FUMER"
 
 #: ../about.py:45
+#, fuzzy
 msgid ""
 "\n"
 "        Author: Hermann Hahn\n"
 "        Contact: hermann.h.hahn@gmail.com\n"
-"        Version: 1.2\n"
+"        Version: 1.4\n"
 "        License: GNU General Public License v2.0\n"
 "        Website: https://github.com/hermannhahn/stop-smoke\n"
 "        Requirements: Windows 7 or higher\n"
@@ -39,13 +40,41 @@ msgstr ""
 "\n"
 "        Auteur: Hermann Hahn\n"
 "        Contact: hermann.h.hahn@gmail.com\n"
-"        Version: 1.2\n"
+"        Version: 1.4\n"
 "        Licence: GNU General Public License v2.0\n"
 "        Site Web: https://github.com/hermannhahn/stop-smoke\n"
 "        Exigences: Windows 7 ou supérieur\n"
 "        \n"
 
-#: ../gui.py:18 ../gui.py:180
+#: ../database.py:49 ../gui.py:73
+msgid "English"
+msgstr "Anglais"
+
+#: ../database.py:51 ../gui.py:74
+msgid "French"
+msgstr "Français"
+
+#: ../database.py:53 ../gui.py:75
+msgid "German"
+msgstr "Allemand"
+
+#: ../database.py:55 ../gui.py:76
+msgid "Italian"
+msgstr ""
+
+#: ../database.py:57 ../gui.py:77
+msgid "Portuguese"
+msgstr "Portugais"
+
+#: ../database.py:59 ../gui.py:78
+msgid "Russian"
+msgstr "Russe"
+
+#: ../database.py:61 ../gui.py:79
+msgid "Spanish"
+msgstr "Espagnol"
+
+#: ../gui.py:18 ../gui.py:181
 msgid "Stop Smoking"
 msgstr "Arrêtez de fumer"
 
@@ -65,74 +94,47 @@ msgstr "Quitter"
 msgid "Language"
 msgstr "Langue"
 
-#: ../gui.py:73
-msgid "English"
-msgstr "Anglais"
-
-#: ../gui.py:74
-msgid "French"
-msgstr "Français"
-
-#: ../gui.py:75
-msgid "German"
-msgstr "Allemand"
-
-#: ../gui.py:76
-msgid "Italian"
-msgstr ""
-
-#: ../gui.py:77
-msgid "Portuguese"
-msgstr "Portugais"
-
-#: ../gui.py:78
-msgid "Russian"
-msgstr "Russe"
-
-#: ../gui.py:79
-msgid "Spanish"
-msgstr "Espagnol"
-
-#: ../gui.py:82
+#: ../gui.py:84
 msgid "More"
 msgstr "Plus"
 
-#: ../gui.py:83 ../instructions.py:23
+#: ../gui.py:85 ../instructions.py:23
 msgid "Instructions"
 msgstr "Instructions"
 
-#: ../gui.py:111
+#: ../gui.py:113
 msgid "Initial wait time"
 msgstr "Temps d'attente initial"
 
-#: ../gui.py:111
+#: ../gui.py:113
 msgid "How many minutes do you want to wait before you can smoke again?"
 msgstr ""
 "Combien de minutes voulez-vous attendre avant de pouvoir fumer à nouveau?"
 
-#: ../gui.py:133 ../gui.py:184
+#: ../gui.py:134 ../gui.py:185
 msgid "Time left: {} minutes"
 msgstr "Temps restant: {} minutes"
 
-#: ../gui.py:137
+#: ../gui.py:138
 msgid "Smoke"
 msgstr "Fumer"
 
-#: ../gui.py:143
+#: ../gui.py:144
 msgid "Press the alt key to show/hide the menu"
 msgstr "Appuyez sur la touche alt pour afficher / masquer le menu"
 
-#: ../gui.py:187
+#: ../gui.py:188
 msgid "Free to Smoke"
 msgstr "Libre de fumer"
 
-#: ../gui.py:191
+#: ../gui.py:192
 msgid "You can smoke again"
 msgstr "Vous pouvez fumer à nouveau"
 
 #: ../instructions.py:44
+#, fuzzy
 msgid ""
-"Welcome to Stop Smoke! (v1.2)\n"
+"Welcome to Stop Smoke! (v1.4)\n"
 "\n"
 "This app will help you quit smoking by increasing the wait time every day.\n"
 "\n"
@@ -144,7 +146,7 @@ msgid ""
 "\n"
 "Good luck!"
 msgstr ""
-"Bienvenue dans Stop Smoke! (v1.2)\n"
+"Bienvenue dans Stop Smoke! (v1.4)\n"
 "\n"
 "Cette application vous aidera à arrêter de fumer en augmentant le temps "
 "d'attente chaque jour.\n"

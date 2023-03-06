@@ -23,3 +23,5 @@ rm dist/locales/*.pot
 # Delete .po file from dist/locales/*/LC_MESSAGES
 rm dist/locales/*/LC_MESSAGES/*.po
 
+# Copy icon.ico to dist folder
+cp icon.ico dist

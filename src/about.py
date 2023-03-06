@@ -45,7 +45,7 @@ class About:
         self.about_label["text"] = _("""
         Author: Hermann Hahn
         Contact: hermann.h.hahn@gmail.com
-        Version: 1.2
+        Version: 1.4
         License: GNU General Public License v2.0
         Website: https://github.com/hermannhahn/stop-smoke
         Requirements: Windows 7 or higher

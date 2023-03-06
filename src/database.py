@@ -41,6 +41,25 @@ class SmokingDatabase:
         language = self.c.fetchone()
         return language
 
+    # Return the language name from the database
+    def get_language_name(self):
+        self.c.execute("SELECT language FROM smoking")
+        language = self.c.fetchone()[0]
+        if language == "en":
+            return _("English")
+        elif language == "fr":
+            return _("French")
+        elif language == "de":
+            return _("German")
+        elif language == "it":
+            return _("Italian")
+        elif language == "pt_BR":
+            return _("Portuguese")
+        elif language == "ru":
+            return _("Russian")
+        elif language == "es":
+            return _("Spanish")
+
     # Update the language in the database
     def update_language(self, language):
         self.c.execute("UPDATE smoking SET language = ?", (language,))

@@ -67,7 +67,7 @@ class StopSmokingApp(tk.Frame):
         self.menu.add_cascade(label=_("File"), menu=self.file_menu)
         self.file_menu.add_command(label=_("Change interval"), command=self.change_interval)
         self.file_menu.add_command(label=_("Quit"), command=self.quit)
-        # Create a language menu
+        # Create a language menu and mark the current language
         self.language_menu = tk.Menu(self.menu)
         self.menu.add_cascade(label=_("Language"), menu=self.language_menu)
         self.language_menu.add_command(label=_("English"), command=lambda: self.update_language("en"))
@@ -77,6 +77,8 @@ class StopSmokingApp(tk.Frame):
         self.language_menu.add_command(label=_("Portuguese"), command=lambda: self.update_language("pt_BR"))
         self.language_menu.add_command(label=_("Russian"), command=lambda: self.update_language("ru"))
         self.language_menu.add_command(label=_("Spanish"), command=lambda: self.update_language("es"))
+        # Mark with a checkmark the current language
+        self.language_menu.entryconfig(self.db.get_language_name(), label="✓ " + self.language_menu.entrycget(self.db.get_language_name(), "label"))
         # Create a help menu
         self.help_menu = tk.Menu(self.menu)
         self.menu.add_cascade(label=_("More"), menu=self.help_menu)
@@ -117,7 +119,6 @@ class StopSmokingApp(tk.Frame):
             # Update the data into the database
             self.db.update_data(self.last_smoke, self.wait_time)
             
-
     # Show the instructions
     def show_instructions(self):
         Instructions(self.master)

@@ -2,12 +2,12 @@
 # Copyright (C) 2023 THE stop-smoke'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the stop-smoke package.
 # Automatically generated, 2023.
-#
+# 
 msgid ""
 msgstr ""
-"Project-Id-Version: stop-smoke 1.2\n"
+"Project-Id-Version: 1.4\n"
 "Report-Msgid-Bugs-To: hermann.h.hahn@gmail.com\n"
-"POT-Creation-Date: 2023-03-05 21:43-0300\n"
+"POT-Creation-Date: 2023-03-06 01:11-0300\n"
 "PO-Revision-Date: 2023-03-05 18:01-0300\n"
 "Last-Translator: Hermann Hahn <hermann.h.hahn@gmail.com>\n"
 "Language-Team: none\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: ../about.py:23 ../gui.py:84
+#: ../about.py:23 ../gui.py:86
 msgid "About"
 msgstr "О программе"
 
@@ -27,11 +27,12 @@ msgid "STOP SMOKE"
 msgstr "ПРЕКРАТИТЬ КУРЕНИЕ"
 
 #: ../about.py:45
+#, fuzzy
 msgid ""
 "\n"
 "        Author: Hermann Hahn\n"
 "        Contact: hermann.h.hahn@gmail.com\n"
-"        Version: 1.2\n"
+"        Version: 1.4\n"
 "        License: GNU General Public License v2.0\n"
 "        Website: https://github.com/hermannhahn/stop-smoke\n"
 "        Requirements: Windows 7 or higher\n"
@@ -40,13 +41,41 @@ msgstr ""
 "\n"
 "        Автор: Герман Хан\n"
 "        Контакт: hermann.h.hahn@gmail.com\n"
-"        Версия: 1.2\n"
+"        Версия: 1.4\n"
 "        Лицензия: GNU General Public License v2.0\n"
 "        Сайт: https://github.com/hermannhahn/stop-smoke\n"
 "        Требования: Windows 7 или выше\n"
 "        \n"
 
-#: ../gui.py:18 ../gui.py:180
+#: ../database.py:49 ../gui.py:73
+msgid "English"
+msgstr "Английский"
+
+#: ../database.py:51 ../gui.py:74
+msgid "French"
+msgstr "Французский"
+
+#: ../database.py:53 ../gui.py:75
+msgid "German"
+msgstr "Немецкий"
+
+#: ../database.py:55 ../gui.py:76
+msgid "Italian"
+msgstr ""
+
+#: ../database.py:57 ../gui.py:77
+msgid "Portuguese"
+msgstr "Португальский"
+
+#: ../database.py:59 ../gui.py:78
+msgid "Russian"
+msgstr "Русский"
+
+#: ../database.py:61 ../gui.py:79
+msgid "Spanish"
+msgstr "Испанский"
+
+#: ../gui.py:18 ../gui.py:181
 msgid "Stop Smoking"
 msgstr "Прекратить курение"
 
@@ -66,73 +95,46 @@ msgstr "Выход"
 msgid "Language"
 msgstr "Язык"
 
-#: ../gui.py:73
-msgid "English"
-msgstr "Английский"
-
-#: ../gui.py:74
-msgid "French"
-msgstr "Французский"
-
-#: ../gui.py:75
-msgid "German"
-msgstr "Немецкий"
-
-#: ../gui.py:76
-msgid "Italian"
-msgstr ""
-
-#: ../gui.py:77
-msgid "Portuguese"
-msgstr "Португальский"
-
-#: ../gui.py:78
-msgid "Russian"
-msgstr "Русский"
-
-#: ../gui.py:79
-msgid "Spanish"
-msgstr "Испанский"
-
-#: ../gui.py:82
+#: ../gui.py:84
 msgid "More"
 msgstr "Еще"
 
-#: ../gui.py:83 ../instructions.py:23
+#: ../gui.py:85 ../instructions.py:23
 msgid "Instructions"
 msgstr "Инструкции"
 
-#: ../gui.py:111
+#: ../gui.py:113
 msgid "Initial wait time"
 msgstr "Начальное время ожидания"
 
-#: ../gui.py:111
+#: ../gui.py:113
 msgid "How many minutes do you want to wait before you can smoke again?"
 msgstr "Сколько минут вы хотите ждать, прежде чем сможете снова курить?"
 
-#: ../gui.py:133 ../gui.py:184
+#: ../gui.py:134 ../gui.py:185
 msgid "Time left: {} minutes"
 msgstr "Осталось времени: {} минут"
 
-#: ../gui.py:137
+#: ../gui.py:138
 msgid "Smoke"
 msgstr "Курить"
 
-#: ../gui.py:143
+#: ../gui.py:144
 msgid "Press the alt key to show/hide the menu"
 msgstr "Нажмите клавишу alt, чтобы показать/скрыть меню"
 
-#: ../gui.py:187
+#: ../gui.py:188
 msgid "Free to Smoke"
 msgstr "Свободно курить"
 
-#: ../gui.py:191
+#: ../gui.py:192
 msgid "You can smoke again"
 msgstr "Вы можете снова курить"
 
 #: ../instructions.py:44
+#, fuzzy
 msgid ""
-"Welcome to Stop Smoke! (v1.2)\n"
+"Welcome to Stop Smoke! (v1.4)\n"
 "\n"
 "This app will help you quit smoking by increasing the wait time every day.\n"
 "\n"
@@ -144,7 +146,7 @@ msgid ""
 "\n"
 "Good luck!"
 msgstr ""
-"Добро пожаловать в Stop Smoke! (v1.2)\n"
+"Добро пожаловать в Stop Smoke! (v1.4)\n"
 "\n"
 "Это приложение поможет вам бросить курить, увеличивая время ожидания каждый "
 "день.\n"

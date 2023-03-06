@@ -79,6 +79,8 @@ for LOCALE in $LOCALES; do
         msgmerge --update $LOCALE/LC_MESSAGES/$SOFTWARE_NAME.po $SOFTWARE_NAME.pot
         # Wait file to be written
         sleep 1
+        # Update the .po file with package version
+        sed -i "s/Project-Id-Version: $OLD_VERSION/Project-Id-Version: $VERSION/" $LOCALE/LC_MESSAGES/$SOFTWARE_NAME.po
         # Check if the .mo file exists
         # Update / Create .mo file
         if [ -f $LOCALE/LC_MESSAGES/$SOFTWARE_NAME.mo ]; then
@@ -102,6 +104,9 @@ for LOCALE in $LOCALES; do
         NEEDED_TRANSLATIONS=$((NEEDED_TRANSLATIONS+1))
     fi
 done
+
+# Remove .po~ files in all directories
+find . -name "*.po~" -type f -delete
 
 # If there are needed translations, print error message and exit
 if [ $NEEDED_TRANSLATIONS -gt 0 ]; then
