@@ -31,7 +31,7 @@ if [ "$VERSION" = "" ]; then
     exit 0
 fi
 
-# Check if version number is valid
+# Check if version number is valid, e.g. 1.0.0
 if [[ ! $VERSION =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
     echo ""
     echo "[ERROR] Invalid version number"
@@ -55,27 +55,37 @@ OLD_VERSION=$VERSION
 
 # Get Project-Id-Version from file "$SOFTWARE_NAME.pot" if it exists
 if [ -f $SOFTWARE_NAME.pot ]; then
-    OLD_VERSION=$(grep "Project-Id-Version: " $SOFTWARE_NAME.pot | cut -d " " -f 2)
+    OLD_VERSION=$(grep -oP 'Project-Id-Version:\s*\K[0-9.]+' stop-smoke.pot)
+    OLD_VERSION=$(echo "$project_version" | tr -d '\0')
 fi
 
 # Create/Update .pot file
 echo "Creating/Updating $SOFTWARE_NAME.pot..."
-xgettext --language=Python --from-code=UTF-8 --keyword=_ --keyword=N_ --package-name="$SOFTWARE_NAME" --package-version="$VERSION" --msgid-bugs-address="$AUTHOR_EMAIL" --output=$SOFTWARE_NAME.pot ../*.py
+xgettext --language=Python --from-code=UTF-8 --keyword=_ --keyword=N_ --package-name="$SOFTWARE_NAME" --msgid-bugs-address="$AUTHOR_EMAIL" --output=$SOFTWARE_NAME.pot ../*.py
+sleep 2
 
-# Update the .po file with Last-Translator to "Hermann Hahn <hermann.h.hahn@gmail.com>" and add \n at the end
+# Update the .pot file with Project-Id-Version to version number
+sed -i "s/Project-Id-Version: stop-smoke/Project-Id-Version: $VERSION/" $SOFTWARE_NAME.pot
+# Update the .po file with Last-Translator to "Hermann Hahn <hermann.h.hahn@gmail.com>"
 sed -i "s/Last-Translator: FULL NAME <EMAIL@ADDRESS>/Last-Translator: $AUTHOR <$AUTHOR_EMAIL>/" $SOFTWARE_NAME.pot
 # Update the .pot file with PO-Revision-Date to current date and add \n at the end
 sed -i "s/PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE/PO-Revision-Date: $(date +"%Y-%m-%d %H:%M%z")/" $SOFTWARE_NAME.pot
-# Update the .pot file with Language-Team to "NO-TEAM <hermann.h.hahn@gmail.com>" and add \n at the end
+# Update the .pot file with Language-Team to "NO-TEAM <hermann.h.hahn@gmail.com>"
 sed -i "s/Language-Team: LANGUAGE <LL@li.org>/Language-Team: NO-TEAM <$AUTHOR_EMAIL>/" $SOFTWARE_NAME.pot
-# Update the .pot file with Language to "en" and add \n at the end
+# Update the .pot file with Language to "en"
 sed -i "s/Language: */Language: en/" $SOFTWARE_NAME.pot
-# Update the .pot file with MIME-Version to "1.0" and add \n at the end
+# Update the .pot file with MIME-Version to "1.0"
 sed -i "s/MIME-Version: 1.0/MIME-Version: 1.0/" $SOFTWARE_NAME.pot
 # Update the .pot file with Content-Type to "text/plain; charset=UTF-8" and add \n at the end
 sed -i "s/Content-Type: text\/plain; charset=CHARSET/Content-Type: text\/plain; charset=UTF-8/" $SOFTWARE_NAME.pot
 # Update the .pot file with Content-Transfer-Encoding to "8bit" and add \n at the end
 sed -i "s/Content-Transfer-Encoding: 8bit/Content-Transfer-Encoding: 8bit/" $SOFTWARE_NAME.pot
+# Change text in the .pot file with Version to version number
+sed -i "s/\( Version: *\)[0-9.]\+/\1$VERSION/" $SOFTWARE_NAME.pot
+# Change text in the .pot file with "Welcome to Stop Smoke! ($OLD_VERSION)" to "Welcome to Stop Smoke! ($VERSION)"
+sed -i "s/\(Welcome to Stop Smoke! (v*\)[0-9.]\+/\1$VERSION/" $SOFTWARE_NAME.pot
+
+sleep 1
 
 # Create directory for each language in the list if it does not exist
 for LANGUAGES_TO_TRANSLATE in $LAGUAGE_LIST; do
@@ -86,6 +96,8 @@ for LANGUAGES_TO_TRANSLATE in $LAGUAGE_LIST; do
         mkdir $LANGUAGES_TO_TRANSLATE/LC_MESSAGES
     fi
 done
+
+sleep 1
 
 # Save the name of all directories in the locales directory in a variable
 LOCALES=$(ls -d */)
@@ -107,7 +119,7 @@ for LOCALE in $LOCALES; do
         # Wait file to be written
         sleep 1
         # Update the .po file with package version
-        sed -i "s/Project-Id-Version: $OLD_VERSION/Project-Id-Version: $VERSION/" $LOCALE/LC_MESSAGES/$SOFTWARE_NAME.po
+        sed -i "s/\(Project-Id-Version: *\)[0-9.]\+/\1$VERSION/" $LOCALE/LC_MESSAGES/$SOFTWARE_NAME.po
         # Check if the .mo file exists
         # Update / Create .mo file
         if [ -f $LOCALE/LC_MESSAGES/$SOFTWARE_NAME.mo ]; then
@@ -118,6 +130,7 @@ for LOCALE in $LOCALES; do
         msgfmt $LOCALE/LC_MESSAGES/$SOFTWARE_NAME.po --output-file=$LOCALE/LC_MESSAGES/$SOFTWARE_NAME.mo
         UPDATED_MO_FILES=True
         echo "... done."
+        sleep 1
     else
         # If not, create the .po file from the .pot file
         msginit --no-translator --input=$SOFTWARE_NAME.pot --output=$LOCALE/LC_MESSAGES/$SOFTWARE_NAME.po --locale=$LOCALE
@@ -129,6 +142,7 @@ for LOCALE in $LOCALES; do
         echo "File $LOCALE/LC_MESSAGES/$SOFTWARE_NAME.po has been created."
         # Add 1 to the variable for needed translations
         NEEDED_TRANSLATIONS=$((NEEDED_TRANSLATIONS+1))
+        sleep 1
     fi
 done
 

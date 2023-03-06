@@ -1,14 +1,14 @@
-# French translations for stop-smoke package.
-# Copyright (C) 2023 THE stop-smoke'S COPYRIGHT HOLDER
+# French translations for 1.5.0 package.
+# Copyright (C) 2023 THE 1.5.0'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the stop-smoke package.
 # Automatically generated, 2023.
-# 
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: 1.4\n"
+"Project-Id-Version: 1.5.0\n"
 "Report-Msgid-Bugs-To: hermann.h.hahn@gmail.com\n"
-"POT-Creation-Date: 2023-03-06 01:11-0300\n"
-"PO-Revision-Date: 2023-03-05 18:01-0300\n"
+"POT-Creation-Date: 2023-03-06 16:59-0300\n"
+"PO-Revision-Date: 2023-03-06 16:59-0300\n"
 "Last-Translator: Hermann Hahn <hermann.h.hahn@gmail.com>\n"
 "Language-Team: none\n"
 "Language: fr\n"
@@ -26,24 +26,23 @@ msgid "STOP SMOKE"
 msgstr "ARRÊTEZ DE FUMER"
 
 #: ../about.py:45
-#, fuzzy
 msgid ""
 "\n"
 "        Author: Hermann Hahn\n"
 "        Contact: hermann.h.hahn@gmail.com\n"
-"        Version: 1.4\n"
+"        Version: 1.5.0\n"
 "        License: GNU General Public License v2.0\n"
 "        Website: https://github.com/hermannhahn/stop-smoke\n"
 "        Requirements: Windows 7 or higher\n"
 "        \n"
 msgstr ""
 "\n"
-"        Auteur: Hermann Hahn\n"
-"        Contact: hermann.h.hahn@gmail.com\n"
-"        Version: 1.4\n"
-"        Licence: GNU General Public License v2.0\n"
-"        Site Web: https://github.com/hermannhahn/stop-smoke\n"
-"        Exigences: Windows 7 ou supérieur\n"
+"        Auteur : Hermann Hahn\n"
+"        Contact : hermann.h.hahn@gmail.com\n"
+"        Version : 1.5.0\n"
+"        Licence : GNU General Public License v2.0\n"
+"        Site web : https://github.com/hermannhahn/stop-smoke\n"
+"        Exigences : Windows 7 ou supérieur\n"
 "        \n"
 
 #: ../database.py:49 ../gui.py:73
@@ -60,7 +59,7 @@ msgstr "Allemand"
 
 #: ../database.py:55 ../gui.py:76
 msgid "Italian"
-msgstr ""
+msgstr "Italien"
 
 #: ../database.py:57 ../gui.py:77
 msgid "Portuguese"
@@ -84,7 +83,7 @@ msgstr "Fichier"
 
 #: ../gui.py:68
 msgid "Change interval"
-msgstr "Changer l'intervalle"
+msgstr "Modifier l'intervalle"
 
 #: ../gui.py:69
 msgid "Quit"
@@ -108,12 +107,11 @@ msgstr "Temps d'attente initial"
 
 #: ../gui.py:113
 msgid "How many minutes do you want to wait before you can smoke again?"
-msgstr ""
-"Combien de minutes voulez-vous attendre avant de pouvoir fumer à nouveau?"
+msgstr "Combien de minutes voulez-vous attendre avant de pouvoir fumer à nouveau ?"
 
 #: ../gui.py:134 ../gui.py:185
 msgid "Time left: {} minutes"
-msgstr "Temps restant: {} minutes"
+msgstr "Temps restant : {} minutes"
 
 #: ../gui.py:138
 msgid "Smoke"
@@ -132,31 +130,23 @@ msgid "You can smoke again"
 msgstr "Vous pouvez fumer à nouveau"
 
 #: ../instructions.py:44
-#, fuzzy
 msgid ""
-"Welcome to Stop Smoke! (v1.4)\n"
+"Welcome to Stop Smoke! (v1.5.0)\n"
 "\n"
 "This app will help you quit smoking by increasing the wait time every day.\n"
 "\n"
-"The app will show you how much time you have left before you can smoke "
-"again.\n"
 "Every time you smoke, click the «Smoke» button to start the timer.\n"
 "\n"
 "The app will say how much time you have left before you can smoke again.\n"
 "\n"
 "Good luck!"
 msgstr ""
-"Bienvenue dans Stop Smoke! (v1.4)\n"
+"Bienvenue dans Stop Smoke ! (v1.5.0)\n"
 "\n"
-"Cette application vous aidera à arrêter de fumer en augmentant le temps "
-"d'attente chaque jour.\n"
+"Cette application vous aidera à arrêter de fumer en augmentant le temps d'attente chaque jour.\n"
 "\n"
-"L'application vous indiquera combien de temps vous avez encore avant de "
-"pouvoir fumer à nouveau.\n"
-"Chaque fois que vous fumez, cliquez sur le bouton «Fumer» pour démarrer le "
-"chronomètre.\n"
+"Chaque fois que vous fumez, cliquez sur le bouton «Fumer» pour démarrer le minuteur.\n"
 "\n"
-"L'application vous dira combien de temps vous avez encore avant de pouvoir "
-"fumer à nouveau.\n"
+"L'application vous dira combien de temps vous avez avant de pouvoir fumer à nouveau.\n"
 "\n"
-"Bonne chance!"
+"Bonne chance !"

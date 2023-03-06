@@ -1,14 +1,14 @@
-# Portuguese translations for stop-smoke package.
-# Copyright (C) 2023 THE stop-smoke'S COPYRIGHT HOLDER
+# Portuguese translations for 1.5.0 package.
+# Copyright (C) 2023 THE 1.5.0'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the stop-smoke package.
 # Automatically generated, 2023.
-# 
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: 1.4\n"
+"Project-Id-Version: 1.5.0\n"
 "Report-Msgid-Bugs-To: hermann.h.hahn@gmail.com\n"
-"POT-Creation-Date: 2023-03-06 01:11-0300\n"
-"PO-Revision-Date: 2023-03-05 18:01-0300\n"
+"POT-Creation-Date: 2023-03-06 16:59-0300\n"
+"PO-Revision-Date: 2023-03-06 16:59-0300\n"
 "Last-Translator: Hermann Hahn <hermann.h.hahn@gmail.com>\n"
 "Language-Team: none\n"
 "Language: pt_BR\n"
@@ -26,12 +26,11 @@ msgid "STOP SMOKE"
 msgstr "PARAR DE FUMAR"
 
 #: ../about.py:45
-#, fuzzy
 msgid ""
 "\n"
 "        Author: Hermann Hahn\n"
 "        Contact: hermann.h.hahn@gmail.com\n"
-"        Version: 1.4\n"
+"        Version: 1.5.0\n"
 "        License: GNU General Public License v2.0\n"
 "        Website: https://github.com/hermannhahn/stop-smoke\n"
 "        Requirements: Windows 7 or higher\n"
@@ -40,7 +39,7 @@ msgstr ""
 "\n"
 "        Autor: Hermann Hahn\n"
 "        Contato: hermann.h.hahn@gmail.com\n"
-"        Versão: 1.4\n"
+"        Versão: 1.5.0\n"
 "        Licença: GNU General Public License v2.0\n"
 "        Website: https://github.com/hermannhahn/stop-smoke\n"
 "        Requisitos: Windows 7 ou superior\n"
@@ -60,7 +59,7 @@ msgstr "Alemão"
 
 #: ../database.py:55 ../gui.py:76
 msgid "Italian"
-msgstr ""
+msgstr "Italiano"
 
 #: ../database.py:57 ../gui.py:77
 msgid "Portuguese"
@@ -120,7 +119,7 @@ msgstr "Fumar"
 
 #: ../gui.py:144
 msgid "Press the alt key to show/hide the menu"
-msgstr "Pressione a tecla alt para mostrar/ocultar o menu"
+msgstr "Pressione a tecla alt para mostrar/esconder o menu"
 
 #: ../gui.py:188
 msgid "Free to Smoke"
@@ -131,30 +130,23 @@ msgid "You can smoke again"
 msgstr "Você pode fumar novamente"
 
 #: ../instructions.py:44
-#, fuzzy
 msgid ""
-"Welcome to Stop Smoke! (v1.4)\n"
+"Welcome to Stop Smoke! (v1.5.0)\n"
 "\n"
 "This app will help you quit smoking by increasing the wait time every day.\n"
 "\n"
-"The app will show you how much time you have left before you can smoke "
-"again.\n"
 "Every time you smoke, click the «Smoke» button to start the timer.\n"
 "\n"
 "The app will say how much time you have left before you can smoke again.\n"
 "\n"
 "Good luck!"
 msgstr ""
-"Bem-vindo ao Stop Smoke! (v1.4)\n"
+"Bem-vindo ao Stop Smoke! (v1.5.0)\n"
 "\n"
-"Este aplicativo ajudará você a parar de fumar, aumentando o tempo de espera "
-"todos os dias.\n"
+"Este aplicativo irá ajudá-lo a parar de fumar, aumentando o tempo de espera a cada dia.\n"
 "\n"
-"O aplicativo mostrará quanto tempo você tem restante antes de poder fumar "
-"novamente.\n"
 "Toda vez que você fumar, clique no botão «Fumar» para iniciar o cronômetro.\n"
 "\n"
-"O aplicativo dirá quanto tempo você tem restante antes de poder fumar "
-"novamente.\n"
+"O aplicativo dirá quanto tempo você tem restante antes de poder fumar novamente.\n"
 "\n"
 "Boa sorte!"

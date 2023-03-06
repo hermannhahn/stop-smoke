@@ -41,12 +41,10 @@ class Instructions:
         self.instructions_label.pack(pady=15)
         # Set the text of the label
         self.instructions_label["text"] = _(
-"Welcome to Stop Smoke! (v1.4)\n"
+"Welcome to Stop Smoke! (v1.5.0)\n"
 "\n"
 "This app will help you quit smoking by increasing the wait time every day.\n"
 "\n"
-"The app will show you how much time you have left before you can smoke "
-"again.\n"
 "Every time you smoke, click the «Smoke» button to start the timer.\n"
 "\n"
 "The app will say how much time you have left before you can smoke again.\n"

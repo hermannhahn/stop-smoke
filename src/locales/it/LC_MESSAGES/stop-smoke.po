@@ -1,14 +1,14 @@
-# Italian translations for stop-smoke package.
-# Copyright (C) 2023 THE stop-smoke'S COPYRIGHT HOLDER
+# Italian translations for 1.5.0 package.
+# Copyright (C) 2023 THE 1.5.0'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the stop-smoke package.
 # Automatically generated, 2023.
-# 
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: 1.4\n"
+"Project-Id-Version: 1.5.0\n"
 "Report-Msgid-Bugs-To: hermann.h.hahn@gmail.com\n"
-"POT-Creation-Date: 2023-03-06 01:11-0300\n"
-"PO-Revision-Date: 2023-03-05 18:01-0300\n"
+"POT-Creation-Date: 2023-03-06 16:59-0300\n"
+"PO-Revision-Date: 2023-03-06 16:59-0300\n"
 "Last-Translator: Hermann Hahn <hermann.h.hahn@gmail.com>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -26,12 +26,11 @@ msgid "STOP SMOKE"
 msgstr "SMETTI DI FUMARE"
 
 #: ../about.py:45
-#, fuzzy
 msgid ""
 "\n"
 "        Author: Hermann Hahn\n"
 "        Contact: hermann.h.hahn@gmail.com\n"
-"        Version: 1.4\n"
+"        Version: 1.5.0\n"
 "        License: GNU General Public License v2.0\n"
 "        Website: https://github.com/hermannhahn/stop-smoke\n"
 "        Requirements: Windows 7 or higher\n"
@@ -40,7 +39,7 @@ msgstr ""
 "\n"
 "        Autore: Hermann Hahn\n"
 "        Contatto: hermann.h.hahn@gmail.com\n"
-"        Versione: 1.4\n"
+"        Versione: 1.5.0\n"
 "        Licenza: GNU General Public License v2.0\n"
 "        Sito web: https://github.com/hermannhahn/stop-smoke\n"
 "        Requisiti: Windows 7 o superiore\n"
@@ -60,7 +59,7 @@ msgstr "Tedesco"
 
 #: ../database.py:55 ../gui.py:76
 msgid "Italian"
-msgstr ""
+msgstr "Italiano"
 
 #: ../database.py:57 ../gui.py:77
 msgid "Portuguese"
@@ -124,34 +123,29 @@ msgstr "Premi il tasto alt per mostrare/nascondere il menu"
 
 #: ../gui.py:188
 msgid "Free to Smoke"
-msgstr "Libero di fumare"
+msgstr "Puoi fumare"
 
 #: ../gui.py:192
 msgid "You can smoke again"
 msgstr "Puoi fumare di nuovo"
 
 #: ../instructions.py:44
-#, fuzzy
 msgid ""
-"Welcome to Stop Smoke! (v1.4)\n"
+"Welcome to Stop Smoke! (v1.5.0)\n"
 "\n"
 "This app will help you quit smoking by increasing the wait time every day.\n"
 "\n"
-"The app will show you how much time you have left before you can smoke "
-"again.\n"
 "Every time you smoke, click the «Smoke» button to start the timer.\n"
 "\n"
 "The app will say how much time you have left before you can smoke again.\n"
 "\n"
 "Good luck!"
 msgstr ""
-"Benvenuto in Stop Smoke! (v1.4)\n"
+"Benvenuto in Stop Smoke! (v1.5.0)\n"
 "\n"
-"Questa app ti aiuterà a smettere di fumare aumentando il tempo di attesa "
-"ogni giorno.\n"
+"Questa app ti aiuterà a smettere di fumare aumentando il tempo di attesa ogni giorno.\n"
 "\n"
-"L'app ti mostrerà quanto tempo ti rimane prima di poter fumare di nuovo.\n"
-"Ogni volta che fumi, fai clic sul pulsante «Fuma» per avviare il timer.\n"
+"Ogni volta che fumi, clicca il pulsante «Fuma» per avviare il timer.\n"
 "\n"
 "L'app ti dirà quanto tempo ti rimane prima di poter fumare di nuovo.\n"
 "\n"
