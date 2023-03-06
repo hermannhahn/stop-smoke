@@ -1,16 +1,20 @@
 import gettext
-import locale
+from database import SmokingDatabase
 
-# Get the system language
-LANG = locale.getlocale()[0]
-# If the system language is not defined, use the default language
-if not LANG:
-    LANG = 'en_US'
+# Set default language
+LANG = "en"
 
-LANG = 'en_US'
+# Create a database object
+db = SmokingDatabase()
+
+# Get the language from the database, check if it's not None and set it
+lang = db.get_language()
+if lang:
+    LANG = lang[0]
+
 # Set the path to the translation files
 LOCALES_DIR = "locales" # /LC_MESSAGES/stop-smoke.mo
- 
+
 # Create a translation object
 trans = gettext.translation('stop-smoke', localedir=LOCALES_DIR, languages=[LANG])
 
