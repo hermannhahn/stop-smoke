@@ -1,3 +1,0 @@
-[TYPECHECK]
-# Ignore member access on an undefined object
-ignored-modules=self.master
