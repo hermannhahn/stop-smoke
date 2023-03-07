@@ -1,74 +1,82 @@
+"""Database module"""
 import sqlite3
 
-# Class to manage the database
-class SmokingDatabase:
-    def __init__(self):
-        # Connect to the database
-        self.conn = sqlite3.connect('smoking.db')
-        self.c = self.conn.cursor()
 
-        # Create the table if it doesn't exist
-        self.c.execute('''CREATE TABLE IF NOT EXISTS smoking (
+class SmokingDatabase:
+    """Class to manage the database"""
+
+    def __init__(self):
+        """Connect to the database and create the table if it doesn't exist"""
+        self.conn = sqlite3.connect('smoking.db')
+        self.cursor = self.conn.cursor()
+
+        self.cursor.execute('''CREATE TABLE IF NOT EXISTS smoking (
                             last_smoke INTEGER,
                             wait_time INTEGER,
                             first_run BOOLEAN,
                             language TEXT
                             )''')
-        # Commit the changes
+
         self.conn.commit()
 
-    # Get the data from the database
+
     def get_data(self):
-        self.c.execute("SELECT * FROM smoking")
-        data = self.c.fetchone()
-        # If there is no data, insert the data
+        """Get the data from the database"""
+        self.cursor.execute("SELECT * FROM smoking")
+        data = self.cursor.fetchone()
+
         if not data:
-            self.c.execute("INSERT INTO smoking VALUES (?,?,?,?)", (None, None, True, "en"))
+            self.cursor.execute("INSERT INTO smoking VALUES (?,?,?,?)", (None, None, True, "en"))
             self.conn.commit()
-            # Get the data from the database
-            self.c.execute("SELECT * FROM smoking")
-            data = self.c.fetchone()
+            self.cursor.execute("SELECT * FROM smoking")
+            data = self.cursor.fetchone()
+
         return data
-    
-    # Update the data in the database
+
+
     def update_data(self, last_smoke, wait_time):
-        self.c.execute("UPDATE smoking SET last_smoke = ?, wait_time = ?, first_run = ?", (last_smoke, wait_time, False))
+        """Update the data in the database"""
+        self.cursor.execute("UPDATE smoking SET last_smoke = ?", (last_smoke,))
+        self.cursor.execute("UPDATE smoking SET wait_time = ?", (wait_time,))
+        self.cursor.execute("UPDATE smoking SET first_run = ?", (False,))
         self.conn.commit()
 
-    # Get the language from the database
+
     def get_language(self):
-        self.c.execute("SELECT language FROM smoking")
-        language = self.c.fetchone()
+        """Get the language from the database"""
+        self.cursor.execute("SELECT language FROM smoking")
+        language = self.cursor.fetchone()
         return language
 
-    # Return the language name from the database
-    def get_language_name(self):
-        self.c.execute("SELECT language FROM smoking")
-        language = self.c.fetchone()[0]
-        if language == "en":
-            return _("English")
-        elif language == "fr":
-            return _("French")
-        elif language == "de":
-            return _("German")
-        elif language == "it":
-            return _("Italian")
-        elif language == "pt_BR":
-            return _("Portuguese")
-        elif language == "ru":
-            return _("Russian")
-        elif language == "es":
-            return _("Spanish")
 
-    # Update the language in the database
+    def get_language_name(self):
+        """Return the language name from the database"""
+        self.cursor.execute("SELECT language FROM smoking")
+        language = self.cursor.fetchone()[0]
+
+        language_name_list = {
+            "en": _("English"),
+            "fr": _("French"),
+            "de": _("German"),
+            "it": _("Italian"),
+            "pt_BR": _("Portuguese"),
+            "ru": _("Russian"),
+            "es": _("Spanish")
+        }
+
+        return language_name_list[language]
+
+
     def update_language(self, language):
-        self.c.execute("UPDATE smoking SET language = ?", (language,))
+        """Update the language in the database"""
+        self.cursor.execute("UPDATE smoking SET language = ?", (language,))
         self.conn.commit()
 
-    # First run check
+
     def first_run(self):
-        # Get the data from the database
+        """Check if it's the first run"""
         data = self.get_data()
-        # If the data is not defined, insert the data
-        if not data or data[2] == True:
+
+        if not data or data[2] is True:
             return True
+        return False
