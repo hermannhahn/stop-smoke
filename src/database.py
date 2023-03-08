@@ -1,6 +1,6 @@
-"""Database module"""
+"""SQLite Database module"""
 import sqlite3
-
+from gettext import gettext as _
 
 class SmokingDatabase:
     """Class to manage the database"""
@@ -26,7 +26,7 @@ class SmokingDatabase:
         data = self.cursor.fetchone()
 
         if not data:
-            self.cursor.execute("INSERT INTO smoking VALUES (?,?,?,?)", (None, None, True, "en"))
+            self.cursor.execute("INSERT INTO smoking VALUES (?,?,?,?)", (0, 0, True, "en"))
             self.conn.commit()
             self.cursor.execute("SELECT * FROM smoking")
             data = self.cursor.fetchone()
@@ -55,13 +55,13 @@ class SmokingDatabase:
         language = self.cursor.fetchone()[0]
 
         language_name_list = {
-            "en": _("English"),
-            "fr": _("French"),
-            "de": _("German"),
-            "it": _("Italian"),
-            "pt_BR": _("Portuguese"),
-            "ru": _("Russian"),
-            "es": _("Spanish")
+            "en": ("English"),
+            "fr": ("Francés"),
+            "de": ("Deutsch"),
+            "it": ("Italiano"),
+            "pt_BR": ("Portugues"),
+            "es": ("Castelhano"),
+            "ru": ("русский язык")
         }
 
         return language_name_list[language]

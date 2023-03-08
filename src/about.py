@@ -1,13 +1,10 @@
 """
-Module that contains the main program logic for Stop Smoke, an app that helps smokers quit smoking.
-
-Usage:
-    python stop_smoke.py
+Module to show about when the user
+clicks on the instructions button
 """
 import tkinter as tk
 import os
-from translation import _
-
+from gettext import gettext as _
 
 class About:
     """
@@ -63,12 +60,9 @@ class About:
 
         self.about_label["justify"] = "left"
 
-        self.about_label["text"] = _("""
-        Author: Hermann Hahn
-        Contact: hermann.h.hahn@gmail.com
-        Version: 1.5.0
-        License: GNU General Public License v2.0
-        Website: https://github.com/hermannhahn/stop-smoke
-        Requirements: Windows 7 or higher
-       
-""")
+        self.about_label["text"] = _("""Author: Hermann Hahn
+Contact: hermann.h.hahn@gmail.com
+Version: 1.5.1
+License: GNU General Public License v2.0
+Website: https://github.com/hermannhahn/stop-smoke
+Requirements: Windows 7 or higher""")

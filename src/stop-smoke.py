@@ -1,4 +1,4 @@
-"""Main module of the Stop Smoking app."""
+"""Main module of the Stop Smoke app"""
 import gui
 import tkinter as tk
 

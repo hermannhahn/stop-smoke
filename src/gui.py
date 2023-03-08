@@ -1,6 +1,5 @@
-"""This module contains the GUI of the app."""
+"""The GUI of the app"""
 import tkinter as tk
-
 import time
 import os
 import sys
@@ -101,33 +100,33 @@ class StopSmokingApp(tk.Frame):
         self.file_menu.add_command(label=_("Change interval"), command=self.change_interval)
         self.file_menu.add_command(label=_("Quit"), command=self.quit)
 
-        self.menu.add_cascade(label=_("Language"), menu=self.language_menu)
-        self.language_menu.add_command(label=_("English"),
-            command=lambda: self.update_language("en"))
-        self.language_menu.add_command(label=_("French"),
-            command=lambda: self.update_language("fr"))
-        self.language_menu.add_command(label=_("German"),
-            command=lambda: self.update_language("de"))
-        self.language_menu.add_command(label=_("Italian"),
-            command=lambda: self.update_language("it"))
-        self.language_menu.add_command(label=_("Portuguese"),
-            command=lambda: self.update_language("pt_BR"))
-        self.language_menu.add_command(label=_("Russian"),
-            command=lambda: self.update_language("ru"))
-        self.language_menu.add_command(label=_("Spanish"),
-            command=lambda: self.update_language("es"))
-
-        self.language_menu.entryconfig(self.database.get_language_name(),
-            label="✓ " + self.language_menu.entrycget(
-                self.database.get_language_name(), "label"))
-
         self.menu.add_cascade(label=_("More"), menu=self.help_menu)
         self.help_menu.add_command(label=_("Instructions"), command=self.show_instructions)
         self.help_menu.add_command(label=_("About"), command=self.show_about)
 
+        self.menu.add_cascade(label="🌎", menu=self.language_menu)
+        self.language_menu.add_command(label=("English"),
+            command=lambda: self.update_language("en"))
+        self.language_menu.add_command(label=("Francés"),
+            command=lambda: self.update_language("fr"))
+        self.language_menu.add_command(label=("Deutsch"),
+            command=lambda: self.update_language("de"))
+        self.language_menu.add_command(label=("Italiano"),
+            command=lambda: self.update_language("it"))
+        self.language_menu.add_command(label=("Portugues"),
+            command=lambda: self.update_language("pt_BR"))
+        self.language_menu.add_command(label=("Castelhano"),
+            command=lambda: self.update_language("es"))
+        self.language_menu.add_command(label=("русский язык"),
+            command=lambda: self.update_language("ru"))
+
+        self.language_menu.entryconfig(self.database.get_language_name(), state="disabled")
+        self.language_menu.entryconfig(self.database.get_language_name(), label="✓ " + self.database.get_language_name())
+
 
     def toggle_menu(self, event):
         """Toggle the menu."""
+        event = event
         if self.master.config("menu")[-1] != '':
             # Esconde o menu se estiver visível
             del self.menu

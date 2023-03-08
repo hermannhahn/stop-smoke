@@ -1,8 +1,10 @@
-"""Module to show instructions when the program is first run"""
+"""
+Module to show instructions when the program is first run
+or when the user clicks on the instructions button
+"""
 import tkinter as tk
 import os
-from translation import _
-
+from gettext import gettext as _
 
 class Instructions:
     """Class to show instructions when the program is first run"""
@@ -41,14 +43,13 @@ class Instructions:
         self.instructions_label = tk.Label(self.instructions)
         self.instructions_label.pack(pady=15)
 
-        self.instructions_label["text"] = _(
-"Welcome to Stop Smoke! (v1.5.0)\n"
-"\n"
-"This app will help you quit smoking by increasing the wait time every day.\n"
-"\n"
-"Every time you smoke, click the «Smoke» button to start the timer.\n"
-"\n"
-"The app will say how much time you have left before you can smoke again.\n"
-"\n"
-"Good luck!"
-)
+        self.instructions_label["text"] = _("""
+        Welcome to Stop Smoke version 1.5.1
+
+        This app will help you quit smoking by increasing the wait time every day.
+        
+        Every time you smoke, click the «Smoke» button to start the timer.
+        The app will say how much time you have left before you can smoke again.
+        
+        Good luck!
+        """)

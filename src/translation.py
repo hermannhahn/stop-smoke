@@ -14,7 +14,7 @@ if lang:
     LANG = lang[0]
 
 
-LOCALES_DIR = "locales" # /LC_MESSAGES/stop-smoke.mo
+LOCALES_DIR = "locales"
 
 
 trans = gettext.translation('stop-smoke', localedir=LOCALES_DIR, languages=[LANG])
