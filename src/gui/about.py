@@ -4,7 +4,7 @@ clicks on the instructions button
 """
 import tkinter as tk
 import os
-from gettext import gettext as _
+from modules.translation import _
 
 class About:
     """
@@ -45,24 +45,21 @@ class About:
 
 
         self.about_title = tk.Label(self.about)
-        self.about_title.pack(pady=10, padx=10)
-
-
-        self.about_title["text"] = _("STOP SMOKE")
-
-        self.about_title["font"] = ("Arial", 20, "bold")
+        self.about_label = tk.Label(self.about)
 
         self.about_title["fg"] = "black"
-
-
-        self.about_label = tk.Label(self.about)
-        self.about_label.pack(pady=10, padx=10)
-
+        self.about_title["font"] = ("Arial", 20, "bold")
         self.about_label["justify"] = "left"
 
-        self.about_label["text"] = _("""Author: Hermann Hahn
-Contact: hermann.h.hahn@gmail.com
-Version: 1.5.1
-License: GNU General Public License v2.0
-Website: https://github.com/hermannhahn/stop-smoke
-Requirements: Windows 7 or higher""")
+        self.about_title["text"] = _("STOP SMOKE")
+        self.about_label["text"] = _("""
+        Author: Hermann Hahn
+        Contact: hermann.h.hahn@gmail.com
+        Version: 1.5.1
+        License: GNU General Public License v2.0
+        Website: https://github.com/hermannhahn/stop-smoke
+        Requirements: Windows 7 or higher
+        """)
+
+        self.about_title.pack(padx=10, pady=10)
+        self.about_label.pack()

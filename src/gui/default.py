@@ -5,10 +5,10 @@ import os
 import sys
 import datetime
 from tkinter import simpledialog
-from translation import _
-from database import SmokingDatabase
-from instructions import Instructions
-from about import About
+from gui.instructions import Instructions
+from gui.about import About
+from db.database import SmokingDatabase
+from modules.translation import _
 
 
 class StopSmokingApp(tk.Frame):

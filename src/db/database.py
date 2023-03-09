@@ -1,13 +1,13 @@
 """SQLite Database module"""
 import sqlite3
-from gettext import gettext as _
+
 
 class SmokingDatabase:
     """Class to manage the database"""
 
     def __init__(self):
         """Connect to the database and create the table if it doesn't exist"""
-        self.conn = sqlite3.connect('smoking.db')
+        self.conn = sqlite3.connect('../smoking.db')
         self.cursor = self.conn.cursor()
 
         self.cursor.execute('''CREATE TABLE IF NOT EXISTS smoking (

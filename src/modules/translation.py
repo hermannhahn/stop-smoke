@@ -1,6 +1,6 @@
 """This module contains the translation object and the translation function"""
 import gettext
-from database import SmokingDatabase
+from db.database import SmokingDatabase
 
 
 LANG = "en"

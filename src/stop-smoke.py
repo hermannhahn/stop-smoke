@@ -1,12 +1,11 @@
 """Main module of the Stop Smoke app"""
-import gui
 import tkinter as tk
-
+import gui.default as default
 
 if __name__ == "__main__":
 
     root = tk.Tk()
 
-    app = gui.StopSmokingApp(root)
+    app = default.StopSmokingApp(root)
 
     app.mainloop()

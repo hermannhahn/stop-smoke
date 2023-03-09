@@ -61,14 +61,11 @@ fi
 # Start translation update
 echo "Starting Translation Update"
 
-# Locate old version number in the instructions.py files and replace it with the new version number
-sed -i "s/$OLD_VERSION/$VERSION/g" ../instructions.py
-
-# Locate old version number in the about.py file and replace it with the new version number
-sed -i "s/$OLD_VERSION/$VERSION/g" ../about.py
+# Locate old version number in all files in ../gui folder and replace it with the new version number
+sed -i "s/$OLD_VERSION/$VERSION/g" ../gui/*.py
 
 # Create and update the .pot file
-xgettext --language=Python --from-code=UTF-8 --keyword=_ --package-name="$SOFTWARE_NAME" --msgid-bugs-address="$AUTHOR_EMAIL" --output=$SOFTWARE_NAME.pot ../*.py
+xgettext --language=Python --from-code=UTF-8 --keyword=_ --package-name="$SOFTWARE_NAME" --msgid-bugs-address="$AUTHOR_EMAIL" --output=$SOFTWARE_NAME.pot ../gui/*.py
 sleep 2
 
 # Update the .pot file with Project-Id-Version to version number
