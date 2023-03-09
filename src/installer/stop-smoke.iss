@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Stop Smoke"
-#define MyAppVersion "1.5.0"
+#define MyAppVersion "1.5.1"
 #define MyAppPublisher "Hermann Hahn"
 #define MyAppURL "https://github.com/hermannhahn/stop-smoke"
 #define MyAppExeName "stop-smoke.exe"
@@ -46,7 +46,6 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 Source: "E:\herma\Workspace\Portfolio\Apps\Windows\stop-smoke\src\dist\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
 Source: "E:\herma\Workspace\Portfolio\Apps\Windows\stop-smoke\src\dist\locales\*"; DestDir: "{app}\locales"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "E:\herma\Workspace\Portfolio\Apps\Windows\stop-smoke\src\dist\icon.ico"; DestDir: "{app}"; Flags: ignoreversion
-Source: "E:\herma\Workspace\Portfolio\Apps\Windows\stop-smoke\src\dist\smoking.db"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
