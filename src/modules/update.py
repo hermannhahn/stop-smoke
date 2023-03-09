@@ -11,7 +11,7 @@ class Update(tk.Frame):
         super().__init__(master)
         self.local_version_file = "VERSION.md"
         self.remote_version_url = "https://github.com/hermannhahn/stop-smoke/raw/main/VERSION.md"
-        self.latest_release_url = "dist.zip"
+        self.latest_release_url = "https://github.com/hermannhahn/stop-smoke/blob/v1.5.2/install/dist.zip"
         self.local_version = self.get_local_version()
         self.remote_version = self.get_remote_version()
         self.update_available = self.check_for_update()
