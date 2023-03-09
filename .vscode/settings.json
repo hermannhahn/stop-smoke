@@ -1,9 +1,0 @@
-{
-    "python.analysis.typeCheckingMode": "basic",
-    "python.linting.pylintArgs": [
-        "--ignored-modules=self.master",
-        "--disable=invalid-name"
-    ],
-    "python.linting.pylintEnabled": true,
-    "python.linting.enabled": true
-}
