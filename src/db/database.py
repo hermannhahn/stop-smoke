@@ -26,7 +26,7 @@ class SmokingDatabase:
         data = self.cursor.fetchone()
 
         if not data:
-            self.cursor.execute("INSERT INTO smoking VALUES (?,?,?,?)", (0, 90, True, "en"))
+            self.cursor.execute("INSERT INTO smoking VALUES (?,?,?,?)", (0, 90 * 60, True, "en"))
             self.conn.commit()
             self.cursor.execute("SELECT * FROM smoking")
             data = self.cursor.fetchone()
