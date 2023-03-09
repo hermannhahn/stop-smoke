@@ -8,7 +8,7 @@ a = Analysis(
     ['stop-smoke.py'],
     pathex=[],
     binaries=[],
-    datas=[],
+    datas=[('modules', 'modules')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},

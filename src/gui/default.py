@@ -5,10 +5,12 @@ import os
 import sys
 import datetime
 from tkinter import simpledialog
-from gui.instructions import Instructions
-from gui.about import About
+import modules.update as Update
 from db.database import SmokingDatabase
 from modules.translation import _
+from gui.instructions import Instructions
+from gui.about import About
+from modules.update import Update
 
 
 class StopSmokingApp(tk.Frame):
@@ -35,6 +37,10 @@ class StopSmokingApp(tk.Frame):
         self.icon_path = os.path.abspath("icon.ico")
 
         self.database = SmokingDatabase()
+        
+        # Update the app
+        self.update = Update(self.master)
+        self.update.check_for_update()
 
         first_run = self.database.first_run()
 
@@ -57,6 +63,8 @@ class StopSmokingApp(tk.Frame):
 
 
         self.master.focus_force()
+
+        self.master.bind("<Alt_L>", self.toggle_menu)
 
 
     def create_widgets(self):
@@ -81,8 +89,6 @@ class StopSmokingApp(tk.Frame):
         self.alt_label["text"] = _("Press the alt key to show/hide the menu")
         self.alt_label["font"] = ("", 7)
         self.alt_label.pack(pady=10)
-
-        self.master.bind("<Alt_L>", self.toggle_menu)
 
 
     def create_menu(self):

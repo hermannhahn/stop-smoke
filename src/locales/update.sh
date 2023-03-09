@@ -13,7 +13,7 @@ LAGUAGE_LIST="en de es fr it pt_BR ru"
 
 # Initialize variables
 VERSION=$1
-VERSION_FILE=../../VERSION.md
+VERSION_FILE=../dist/VERSION.md
 OLD_VERSION=$(cat $VERSION_FILE)
 
 # Print version number

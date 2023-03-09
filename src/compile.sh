@@ -12,7 +12,7 @@ rm -rf build
 rm stop-smoke.spec
 
 # Install pyinstaller
-pyinstaller --onefile --windowed --icon=icon.ico stop-smoke.py
+pyinstaller --onefile --windowed --icon=icon.ico --add-data "modules;modules" stop-smoke.py
 
 # Copy src/locales to dist folder
 cp -r locales dist
@@ -25,3 +25,6 @@ rm dist/locales/*/LC_MESSAGES/*.po
 
 # Copy icon.ico to dist folder
 cp icon.ico dist
+
+# Copy VERSION.md to dist folder
+cp VERSION.md dist
