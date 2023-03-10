@@ -3,24 +3,15 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# Stop Smoke
-.vs/
-.vscode-test/
-build/
-dist/
-stopsmoking.db
-src/stopsmoking.db
-src/build/
-src/dist/
-src/dist/stopsmoking.db
-stop-smoke.spec
-stop-smoke.exe
-update.exe
-
 # C extensions
 *.so
 
 # Distribution / packaging
+.vs/
+.vscode/
+.vscode-test/
+build/
+dist/
 .Python
 develop-eggs/
 downloads/
@@ -34,7 +25,6 @@ var/
 wheels/
 pip-wheel-metadata/
 share/python-wheels/
-.vscode/
 *.egg-info/
 .installed.cfg
 *.egg
@@ -43,6 +33,17 @@ MANIFEST
 *.spec
 *.db-journal
 .*~
+
+# Stop Smoke
+stopsmoking.db
+src/stopsmoking.db
+src/build/
+src/dist/
+src/dist/stopsmoking.db
+stop-smoke.spec
+stop-smoke.exe
+update.exe
+update.spec
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
