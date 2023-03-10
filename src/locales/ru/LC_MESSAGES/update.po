@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: update\n"
 "Report-Msgid-Bugs-To: hermann.h.hahn@gmail.com\n"
-"POT-Creation-Date: 2023-03-10 14:51-0300\n"
+"POT-Creation-Date: 2023-03-10 15:26-0300\n"
 "PO-Revision-Date: 2023-03-10 12:32-0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -23,19 +23,27 @@ msgid "Stop Smoke Update"
 msgstr ""
 
 #: ../update.py:29
-msgid "Downloading update..."
+msgid ""
+"\n"
+"     Downloading update..."
 msgstr ""
 
 #: ../update.py:48
-msgid "Extracting update..."
+msgid ""
+"\n"
+"     Extracting update..."
 msgstr ""
 
 #: ../update.py:60
-msgid "Removing temporary files..."
+msgid ""
+"\n"
+"     Removing temporary files..."
 msgstr ""
 
 #: ../update.py:63
-msgid "Update finished."
+msgid ""
+"\n"
+"     Update finished."
 msgstr ""
 
 #: ../update.py:64
