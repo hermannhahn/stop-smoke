@@ -1,37 +1,20 @@
-#####################################################
-# Update translation files                          #
-# This script is part of the Stop Smoke project     #
-# Author: Hermann Hahn                              #
-# License: GPL-3.0                                  #
-# Version: 1.0                                      #
-# Date: 2021-03-21                                  #
-#####################################################
+#################################################
+# Update translation files                      #
+# This script is part of the $SOFTWARE_NAME project #
+# Author: Hermann Hahn                          #
+# License: GPL-3.0                              #
+# Version: 1.0                                  #
+# Date: 2021-03-21                              #
+#################################################
 
 # Project information
 SOFTWARE_NAME="stop-smoke"
-UPDATER_NAME="update"
 LAGUAGE_LIST="en de es fr it pt_BR ru"
 
 # Initialize variables
 VERSION=$1
-VERSION_FILE=../dist/VERSION.md
+VERSION_FILE=../../VERSION.md
 OLD_VERSION=$(cat $VERSION_FILE)
-
-
-# echo orange text
-function echoo() {
-    echo -e "\033[0;33m$1\033[0m"
-}
-
-# echo red text
-function echor() {
-    echo -e "\033[0;31m$1\033[0m"
-}
-
-# echo green text
-function echog() {
-    echo -e "\033[0;32m$1\033[0m"
-}
 
 # Print version number
 echo New version: $VERSION
@@ -47,7 +30,7 @@ AUTHOR_EMAIL=$(git config user.email)
 if [ "$VERSION" = "--help" ] || [ "$VERSION" = "/?" ]; then
     echo "Update translation files help:"
     echo ""
-    echog "Usage: ./update.sh VERSION"
+    echo "Usage: ./update.sh VERSION"
     echo ""
     echo "VERSION is the version number of the software."
     exit 0
@@ -57,9 +40,9 @@ fi
 # Check if version number is given
 if [ "$VERSION" = "" ]; then
     echo ""
-    echor "[ERROR] Missing argument VERSION"
+    echo "[ERROR] Missing argument VERSION"
     echo ""
-    echog "Usage: ./update.sh VERSION"
+    echo "Usage: ./update.sh VERSION"
     echo ""
     echo "VERSION is the version number of the software."
     exit 0
@@ -67,16 +50,16 @@ fi
 # Check if version number is valid, e.g. 1.0.0
 if [[ ! $VERSION =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
     echo ""
-    echor "[ERROR] Invalid version number"
+    echo "[ERROR] Invalid version number"
     echo ""
-    echog "Ex: ./update.sh 1.0.0"
+    echo "Ex: ./update.sh 1.0.0"
     echo ""
     echo "VERSION is the version number of the software."
     exit 0
 fi
 
 # Start translation update
-echog "Starting translation updates..."
+echo "Starting Translation Update"
 
 # Locate old version number in all files in ../gui folder and replace it with the new version number
 sed -i "s/$OLD_VERSION/$VERSION/g" ../gui/*.py
@@ -84,33 +67,23 @@ sed -i "s/$OLD_VERSION/$VERSION/g" ../gui/*.py
 # Create and update the .pot file
 xgettext --language=Python --from-code=UTF-8 --keyword=_ --package-name="$SOFTWARE_NAME" --msgid-bugs-address="$AUTHOR_EMAIL" --output=$SOFTWARE_NAME.pot ../gui/*.py
 sleep 2
-xgettext --language=Python --from-code=UTF-8 --keyword=_ --package-name="$UPDATER_NAME" --msgid-bugs-address="$AUTHOR_EMAIL" --output=$UPDATER_NAME.pot ../update.py
-sleep 2
 
 # Update the .pot file with Project-Id-Version to version number
 sed -i "s/Project-Id-Version: stop-smoke/Project-Id-Version: $VERSION/" $SOFTWARE_NAME.pot
-sed -i "s/Project-Id-Version: updater/Project-Id-Version: $VERSION/" $UPDATER_NAME.pot
 # Update the .po file with Last-Translator to "Hermann Hahn <hermann.h.hahn@gmail.com>"
 sed -i "s/Last-Translator: FULL NAME <EMAIL@ADDRESS>/Last-Translator: $AUTHOR <$AUTHOR_EMAIL>/" $SOFTWARE_NAME.pot
-sed -i "s/Last-Translator: FULL NAME <EMAIL@ADDRESS>/Last-Translator: $AUTHOR <$AUTHOR_EMAIL>/" $UPDATER_NAME.pot
 # Update the .pot file with PO-Revision-Date to current date and add \n at the end
 sed -i "s/PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE/PO-Revision-Date: $(date +"%Y-%m-%d %H:%M%z")/" $SOFTWARE_NAME.pot
-sed -i "s/PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE/PO-Revision-Date: $(date +"%Y-%m-%d %H:%M%z")/" $UPDATER_NAME.pot
 # Update the .pot file with Language-Team to "NO-TEAM <hermann.h.hahn@gmail.com>"
 sed -i "s/Language-Team: LANGUAGE <LL@li.org>/Language-Team: NO-TEAM <$AUTHOR_EMAIL>/" $SOFTWARE_NAME.pot
-sed -i "s/Language-Team: LANGUAGE <LL@li.org>/Language-Team: NO-TEAM <$AUTHOR_EMAIL>/" $UPDATER_NAME.pot
 # Update the .pot file with Language to "en"
 sed -i "s/Language: */Language: en/" $SOFTWARE_NAME.pot
-sed -i "s/Language: */Language: en/" $UPDATER_NAME.pot
 # Update the .pot file with MIME-Version to "1.0"
 sed -i "s/MIME-Version: 1.0/MIME-Version: 1.0/" $SOFTWARE_NAME.pot
-sed -i "s/MIME-Version: 1.0/MIME-Version: 1.0/" $UPDATER_NAME.pot
 # Update the .pot file with Content-Type to "text/plain; charset=UTF-8" and add \n at the end
 sed -i "s/Content-Type: text\/plain; charset=CHARSET/Content-Type: text\/plain; charset=UTF-8/" $SOFTWARE_NAME.pot
-sed -i "s/Content-Type: text\/plain; charset=CHARSET/Content-Type: text\/plain; charset=UTF-8/" $UPDATER_NAME.pot
 # Update the .pot file with Content-Transfer-Encoding to "8bit" and add \n at the end
 sed -i "s/Content-Transfer-Encoding: 8bit/Content-Transfer-Encoding: 8bit/" $SOFTWARE_NAME.pot
-sed -i "s/Content-Transfer-Encoding: 8bit/Content-Transfer-Encoding: 8bit/" $UPDATER_NAME.pot
 sleep 1
 
 # Create directory for each language in the list if it does not exist
@@ -132,55 +105,47 @@ for LOCALE in $LOCALES; do
 
     # Remove the last character from the variable
     LOCALE=${LOCALE%?}
-    LOCALE_GREEN=$(echog $LOCALE)
 
     # Check if file "LOCALE/LC_MESSAGES/$SOFTWARE_NAME.po" exists
     if [ -f $LOCALE/LC_MESSAGES/$SOFTWARE_NAME.po ]; then
-    
+
         # Update the .po file with the .pot file
         msgmerge -q --update --no-fuzzy-matching --lang=$LOCALE $LOCALE/LC_MESSAGES/$SOFTWARE_NAME.po $SOFTWARE_NAME.pot
         sleep 2
+
         # Update Project-Id-Version in the .po file
         sed -i "s/\(Project-Id-Version: *\)[0-9.]\+/\1$VERSION/" $LOCALE/LC_MESSAGES/$SOFTWARE_NAME.po
         sleep 1
         sed -i "s/$OLD_VERSION/$VERSION/g" $LOCALE/LC_MESSAGES/$SOFTWARE_NAME.po
         sleep 1
+
         msgfmt $LOCALE/LC_MESSAGES/$SOFTWARE_NAME.po --output-file=$LOCALE/LC_MESSAGES/$SOFTWARE_NAME.mo
         sleep 1
+        echo "Language $LOCALE have been updated"
+
     else
+
         # If not, create the .po file from the .pot file
         msginit --no-translator --input=$SOFTWARE_NAME.pot --output=$LOCALE/LC_MESSAGES/$SOFTWARE_NAME.po --locale=$LOCALE
         sleep 2
-    fi
 
-    # Check if file "LOCALE/LC_MESSAGES/$UPDATER_NAME.po" exists
-    if [ -f $LOCALE/LC_MESSAGES/$UPDATER_NAME.po ]; then
-        # Update the .po file with the .pot file
-        msgmerge -q --update --no-fuzzy-matching --lang=$LOCALE $LOCALE/LC_MESSAGES/$UPDATER_NAME.po $UPDATER_NAME.pot
-        sleep 2
-        # Update Project-Id-Version in the .po file
-        sed -i "s/\(Project-Id-Version: *\)[0-9.]\+/\1$VERSION/" $LOCALE/LC_MESSAGES/$UPDATER_NAME.po
-        sleep 1
-        sed -i "s/$OLD_VERSION/$VERSION/g" $LOCALE/LC_MESSAGES/$UPDATER_NAME.po
-        sleep 1
-        msgfmt $LOCALE/LC_MESSAGES/$UPDATER_NAME.po --output-file=$LOCALE/LC_MESSAGES/$UPDATER_NAME.mo
-        sleep 1
-    else
-        # If not, create the .po file from the .pot file
-        msginit --no-translator --input=$UPDATER_NAME.pot --output=$LOCALE/LC_MESSAGES/$UPDATER_NAME.po --locale=$LOCALE
-        sleep 2
+        # Say to the user that the .po file has been created and needs to be translated and re-run this script
+        echo "File $LOCALE/LC_MESSAGES/$SOFTWARE_NAME.po has been created."
+
     fi
-    echo "Translation for" $LOCALE_GREEN "has been updated."
 done
 
 # Update .pot file messages with the new version number
 sed -i "s/$OLD_VERSION/$VERSION/g" $SOFTWARE_NAME.pot
-sed -i "s/$OLD_VERSION/$VERSION/g" $UPDATER_NAME.pot
 
 # Update the VERSION.md file with package version
 sed -i "s/$OLD_VERSION/$VERSION/g" $VERSION_FILE
 
 # Remove .po~ files in all directories
-echoo "Removing unnecessary files..."
+echo "Removing unnecessary files..."
 find . -name "*.po~" -type f -delete
-echog "Done"
+
+echo ""
+echo "Translation Update finished"
+echo "If there are .po files that need to be translated."
+echo "Please translate them and re-run this script."
