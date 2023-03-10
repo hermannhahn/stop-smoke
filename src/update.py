@@ -1,3 +1,11 @@
+"""
+Title: Stop Smoke Update
+Author: Hermann Hahn
+License: GPL-3.0
+Version: 1.5.2
+Date: 2021-03-21
+Description: Update script for the Stop Smoke app
+"""
 import urllib.request
 import zipfile
 import os
@@ -76,3 +84,5 @@ root.protocol("WM_DELETE_WINDOW", close_app)
 root.after(100, update_app)
 root.mainloop()
 
+# Path: src\update.spec
+# -*- mode: python ; coding: utf-8 -*-

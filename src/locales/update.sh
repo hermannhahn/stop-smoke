@@ -5,6 +5,9 @@
 # License: GPL-3.0                                  #
 # Version: 1.0                                      #
 # Date: 2021-03-21                                  #
+# Description: Updates the translation files        #
+# Input: src/locales/                               #
+# Output: src/locales/                              #
 #####################################################
 
 # Project information
@@ -12,11 +15,12 @@ SOFTWARE_NAME="stop-smoke"
 UPDATER_NAME="update"
 LAGUAGE_LIST="en de es fr it pt_BR ru"
 
-# Initialize variables
+# Get version number from argument
 VERSION=$1
+
+# Initialize variables
 VERSION_FILE=../dist/VERSION.md
 OLD_VERSION=$(cat $VERSION_FILE)
-
 
 # echo orange text
 function echoo() {
@@ -43,7 +47,7 @@ AUTHOR=$(git config user.name)
 # Get author email from git config
 AUTHOR_EMAIL=$(git config user.email)
 
-### HELP ###
+# Show help
 if [ "$VERSION" = "--help" ] || [ "$VERSION" = "/?" ]; then
     echo "Update translation files help:"
     echo ""
@@ -53,7 +57,6 @@ if [ "$VERSION" = "--help" ] || [ "$VERSION" = "/?" ]; then
     exit 0
 fi
 
-### CONDITIONS ###
 # Check if version number is given
 if [ "$VERSION" = "" ]; then
     echo ""
@@ -64,6 +67,7 @@ if [ "$VERSION" = "" ]; then
     echo "VERSION is the version number of the software."
     exit 0
 fi
+
 # Check if version number is valid, e.g. 1.0.0
 if [[ ! $VERSION =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
     echo ""
@@ -75,40 +79,41 @@ if [[ ! $VERSION =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
     exit 0
 fi
 
-# Start translation update
-echog "Starting translation updates..."
+# Start translation compilation
+echog "Starting translation compilation..."
 
-# Locate old version number in all files in ../gui folder and replace it with the new version number
+# Update the version number in gui files
 sed -i "s/$OLD_VERSION/$VERSION/g" ../gui/*.py
 
-# Create and update the .pot file
+# Create or update the stop-smoke.pot file
 xgettext --language=Python --from-code=UTF-8 --keyword=_ --package-name="$SOFTWARE_NAME" --msgid-bugs-address="$AUTHOR_EMAIL" --output=$SOFTWARE_NAME.pot ../gui/*.py
 sleep 2
+# Create or update the update.pot file
 xgettext --language=Python --from-code=UTF-8 --keyword=_ --package-name="$UPDATER_NAME" --msgid-bugs-address="$AUTHOR_EMAIL" --output=$UPDATER_NAME.pot ../update.py
 sleep 2
 
-# Update the .pot file with Project-Id-Version to version number
+# Update the .pot files with Project-Id-Version to version number
 sed -i "s/Project-Id-Version: stop-smoke/Project-Id-Version: $VERSION/" $SOFTWARE_NAME.pot
 sed -i "s/Project-Id-Version: updater/Project-Id-Version: $VERSION/" $UPDATER_NAME.pot
-# Update the .po file with Last-Translator to "Hermann Hahn <hermann.h.hahn@gmail.com>"
+# Update the .po files with Last-Translator to "Hermann Hahn <hermann.h.hahn@gmail.com>"
 sed -i "s/Last-Translator: FULL NAME <EMAIL@ADDRESS>/Last-Translator: $AUTHOR <$AUTHOR_EMAIL>/" $SOFTWARE_NAME.pot
 sed -i "s/Last-Translator: FULL NAME <EMAIL@ADDRESS>/Last-Translator: $AUTHOR <$AUTHOR_EMAIL>/" $UPDATER_NAME.pot
-# Update the .pot file with PO-Revision-Date to current date and add \n at the end
+# Update the .pot files with PO-Revision-Date to current date and add \n at the end
 sed -i "s/PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE/PO-Revision-Date: $(date +"%Y-%m-%d %H:%M%z")/" $SOFTWARE_NAME.pot
 sed -i "s/PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE/PO-Revision-Date: $(date +"%Y-%m-%d %H:%M%z")/" $UPDATER_NAME.pot
-# Update the .pot file with Language-Team to "NO-TEAM <hermann.h.hahn@gmail.com>"
+# Update the .pot files with Language-Team to "NO-TEAM <hermann.h.hahn@gmail.com>"
 sed -i "s/Language-Team: LANGUAGE <LL@li.org>/Language-Team: NO-TEAM <$AUTHOR_EMAIL>/" $SOFTWARE_NAME.pot
 sed -i "s/Language-Team: LANGUAGE <LL@li.org>/Language-Team: NO-TEAM <$AUTHOR_EMAIL>/" $UPDATER_NAME.pot
-# Update the .pot file with Language to "en"
+# Update the .pot files with Language to "en"
 sed -i "s/Language: */Language: en/" $SOFTWARE_NAME.pot
 sed -i "s/Language: */Language: en/" $UPDATER_NAME.pot
-# Update the .pot file with MIME-Version to "1.0"
+# Update the .pot files with MIME-Version to "1.0"
 sed -i "s/MIME-Version: 1.0/MIME-Version: 1.0/" $SOFTWARE_NAME.pot
 sed -i "s/MIME-Version: 1.0/MIME-Version: 1.0/" $UPDATER_NAME.pot
-# Update the .pot file with Content-Type to "text/plain; charset=UTF-8" and add \n at the end
+# Update the .pot files with Content-Type to "text/plain; charset=UTF-8" and add \n at the end
 sed -i "s/Content-Type: text\/plain; charset=CHARSET/Content-Type: text\/plain; charset=UTF-8/" $SOFTWARE_NAME.pot
 sed -i "s/Content-Type: text\/plain; charset=CHARSET/Content-Type: text\/plain; charset=UTF-8/" $UPDATER_NAME.pot
-# Update the .pot file with Content-Transfer-Encoding to "8bit" and add \n at the end
+# Update the .pot files with Content-Transfer-Encoding to "8bit" and add \n at the end
 sed -i "s/Content-Transfer-Encoding: 8bit/Content-Transfer-Encoding: 8bit/" $SOFTWARE_NAME.pot
 sed -i "s/Content-Transfer-Encoding: 8bit/Content-Transfer-Encoding: 8bit/" $UPDATER_NAME.pot
 sleep 1

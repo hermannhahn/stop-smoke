@@ -50,6 +50,7 @@ src/db/__pycache__
 src/gui/__pycache__
 src/locales/__pycache__
 src/modules/__pycache__
+src/installer/__pycache__
 
 # PyInstaller
 #  Usually these files are written by a python script from a template

@@ -1,11 +1,18 @@
-"""Main module of the Stop Smoke app"""
+"""
+Title: Stop Smoke
+Author: Hermann Hahn
+License: GPL-3.0
+Version: 1.5.2
+Date: 2021-03-21
+Description: Stop Smoke main script
+"""
 import tkinter as tk
-import gui.default as default
+import gui.app as app
 
 if __name__ == "__main__":
 
     root = tk.Tk()
 
-    app = default.StopSmokingApp(root)
+    app = app.StopSmokingApp(root)
 
     app.mainloop()
