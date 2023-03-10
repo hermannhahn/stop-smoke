@@ -4,7 +4,7 @@ clicks on the instructions button
 """
 import tkinter as tk
 import os
-from modules.translation import _
+from modules.app_translation import _
 
 class About:
     """

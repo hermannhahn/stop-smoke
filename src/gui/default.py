@@ -5,12 +5,12 @@ import os
 import sys
 import datetime
 from tkinter import simpledialog
-import modules.update as Update
 from db.database import SmokingDatabase
-from modules.translation import _
+from modules.app_translation import _
+from modules.check_update import Update
 from gui.instructions import Instructions
 from gui.about import About
-from modules.update import Update
+
 
 
 class StopSmokingApp(tk.Frame):
@@ -39,8 +39,7 @@ class StopSmokingApp(tk.Frame):
         self.database = SmokingDatabase()
         
         # Update the app
-        self.update = Update(self.master)
-        self.update.check_for_update()
+        Update(self.master)
 
         first_run = self.database.first_run()
 

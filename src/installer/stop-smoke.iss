@@ -46,6 +46,9 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 Source: "E:\herma\Workspace\Portfolio\Apps\Windows\stop-smoke\src\dist\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
 Source: "E:\herma\Workspace\Portfolio\Apps\Windows\stop-smoke\src\dist\locales\*"; DestDir: "{app}\locales"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "E:\herma\Workspace\Portfolio\Apps\Windows\stop-smoke\src\dist\icon.ico"; DestDir: "{app}"; Flags: ignoreversion
+Source: "E:\herma\Workspace\Portfolio\Apps\Windows\stop-smoke\src\dist\update.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "E:\herma\Workspace\Portfolio\Apps\Windows\stop-smoke\src\dist\VERSION.md"; DestDir: "{app}"; Flags: ignoreversion
+Source: "E:\herma\Workspace\Portfolio\Apps\Windows\stop-smoke\src\dist\LICENSE"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
