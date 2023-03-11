@@ -33,6 +33,7 @@ MANIFEST
 *.spec
 *.db-journal
 .*~
+.gitgnore
 
 # Stop Smoke
 stopsmoking.db
@@ -40,8 +41,8 @@ src/stopsmoking.db
 src/build/
 src/dist/
 src/dist/stopsmoking.db
-stop-smoke.spec
-stop-smoke.exe
+stopsmoke.spec
+stopsmoke.exe
 update.exe
 update.spec
 __pycache__

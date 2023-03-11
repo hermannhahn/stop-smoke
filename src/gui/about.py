@@ -1,57 +1,59 @@
 """
-Module to show about when the user
-clicks on the instructions button
+Title: About Module
+Author: Hermann Hahn
+License: GPL-2.0
+Version: 1.5.2
+Description: This module contains the about GUI
 """
 import tkinter as tk
 import os
-from modules.app_translation import _
+from modules.app_translation import _ # pylint: disable=import-error,no-name-in-module
 
 class About:
-    """
-    Class responsible for displaying information about the program when it is first run.
-    """
+    """About GUI class"""
 
     def __init__(self, master):
-        """
-        Creates a new window to display information about the program.
+        """Initialize the class"""
 
-        :param master: Tkinter object
-        """
+        # Set variables
         self.master = master
         self.icon_path = os.path.abspath("icon.ico")
 
-
+        # Show about
         self.show_about()
 
 
     def close(self):
-        """
-        Closes the program window.
-        """
+        """Close the about window"""
         self.about.destroy()
 
 
     def show_about(self):
-        """
-        Creates a new window to display information about the program.
-        """
+        """Show the about window"""
+
+        # Create about window
         self.about = tk.Toplevel(self.master)
         self.about.title(_("About"))
         self.about.iconbitmap(self.icon_path)
         self.about.geometry("380x220")
         self.about.resizable(False, False)
 
+        # Set window close function
         self.about.protocol("WM_DELETE_WINDOW", self.close)
 
-
+        # Create about title
         self.about_title = tk.Label(self.about)
-        self.about_label = tk.Label(self.about)
-
+        self.about_title["text"] = _("STOP SMOKE")
         self.about_title["fg"] = "black"
         self.about_title["font"] = ("Arial", 20, "bold")
-        self.about_label["justify"] = "left"
 
-        self.about_title["text"] = _("STOP SMOKE")
+        # Create about label
+        self.about_label = tk.Label(self.about)
+        self.about_label["justify"] = "left"
+        self.about_label["fg"] = "black"
+        self.about_label["font"] = ("Arial", 12)
+
+        # Set about text
         self.about_label["text"] = _("""
         Author: Hermann Hahn
         Contact: hermann.h.hahn@gmail.com
@@ -61,5 +63,8 @@ class About:
         Requirements: Windows 7 or higher
         """)
 
+        # Pack title
         self.about_title.pack(padx=10, pady=10)
+
+        # Pack label
         self.about_label.pack()

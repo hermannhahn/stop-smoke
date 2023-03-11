@@ -1,10 +1,9 @@
 """
-Title: Stop Smoke Update
+Title: Stop Smoke Updater
 Author: Hermann Hahn
-License: GPL-3.0
+License: GPL-2.0
 Version: 1.5.2
-Date: 2021-03-21
-Description: Update script for the Stop Smoke app
+Description: Updater script for the Stop Smoke app
 """
 import urllib.request
 import zipfile
@@ -16,24 +15,32 @@ from tkinter import messagebox
 from tkinter.ttk import Progressbar
 from modules.app_update_translation import _
 
-URL = "https://github.com/hermannhahn/stop-smoke/releases/download/latest/stop-smoke.zip"
-ZIP_FILE = "stop-smoke.zip"
+# Change this to the URL of the latest release
+URL = "https://github.com/hermannhahn/stop-smoke/releases/download/latest/stopsmoke.zip"
+ZIP_FILE = "stopsmoke.zip"
 
+# Window setup
 root = tk.Tk()
 root.title(_("Stop Smoke Update"))
 root.iconbitmap(os.path.abspath("icon.ico"))
 root.geometry("300x100")
 root.resizable(False, False)
+
+# Center window
 root.update_idletasks()
 
+# Progress bar setup
 progress_label = tk.Label(root, text="")
 progress_label.pack(anchor="w")
 
 progressbar = Progressbar(root, orient=tk.HORIZONTAL, length=250, mode='determinate')
 progressbar.pack(pady=10)
 
+
 def update_app():
     """Update the app"""
+
+    # Update status
     progress_label.config(text=_("\n     Downloading update..."))
 
     # Get file size for progress bar
@@ -53,6 +60,7 @@ def update_app():
             root.update_idletasks()
             data = response.read(block_size)
 
+    # Update status
     progress_label.config(text=_("\n     Extracting update..."))
 
     # Extract files with progress bar
@@ -65,12 +73,18 @@ def update_app():
             progressbar.config(value=progress)
             root.update_idletasks()
 
+    # Update status
     progress_label.config(text=_("\n     Removing temporary files..."))
 
+    # Remove temporary files
     os.remove(ZIP_FILE)
+
+    # Update status
     progress_label.config(text=_("\n     Update finished."))
+
+    # Restart app
     messagebox.showinfo(_("Update successful"), _("Update successful. The app will now restart."))
-    subprocess.Popen("stop-smoke.exe")
+    subprocess.Popen("stopsmoke.exe")
     close_app()
 
 
@@ -79,10 +93,9 @@ def close_app():
     root.destroy()
     sys.exit()
 
-
-root.protocol("WM_DELETE_WINDOW", close_app)
+# Start update
 root.after(100, update_app)
 root.mainloop()
 
-# Path: src\update.spec
-# -*- mode: python ; coding: utf-8 -*-
+# Close app on window close
+root.protocol("WM_DELETE_WINDOW", close_app)
