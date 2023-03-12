@@ -8,23 +8,24 @@ This app will help you stop smoking. You can set the starting interval between c
 [RUN]
 
 To run the app, run `python stopsmoke.py` in the `src` folder.
-<br><br><br>
-
+<br>
+<br>
 [TRANSLATIONS]
-
+<br>
 To add languages, just add a new folder in `src/locales` with the language code.
+<br>
     e.g. `src/locales/de` for German
-
+<br>
 Then run `./update_translation.sh` in the `src/locales` folder to create .po file. 
-
+<br>
 After this, you can translate the strings in the `src/locales/de/stopsmoke.po` file. Re-run `./update.sh` to compile new translations and update existing ones.
-
-
+<br>
+<br>
 [COMPILE]
-
+<br>
 To compile your altered source code, run `./compile.sh` in the `src` folder. This will compile the app, updater, translations and installer run `./compile.sh` in the src folder.
-
-
+<br>
+<br>
 [STRUCTURE]
 ```
     src
