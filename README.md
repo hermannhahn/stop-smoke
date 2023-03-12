@@ -8,7 +8,7 @@ This app will help you stop smoking. You can set the starting interval between c
 [RUN]
 
 To run the app, run `python stopsmoke.py` in the `src` folder.
-<br>
+<br><br><br>
 
 [TRANSLATIONS]
 
