@@ -22,7 +22,7 @@ e.g. `src/locales/de` for German
 Then run `./update_translation.sh` in the `src/locales` folder to create .po file. 
 <br>
 <br>
-After this, you can translate the strings in the `src/locales/de/stopsmoke.po` file. Re-run `./update.sh` to compile new translations and update existing ones.
+After this, you can translate the strings in the `src/locales/de/stopsmoke.po` file. Re-run `./update_translation.sh` to compile new translations and update existing ones.
 <br>
 <br>
 <br>
