@@ -15,6 +15,7 @@ from db.database import SmokingDatabase # pylint: disable=import-error,no-name-i
 from gui.instructions import Instructions # pylint: disable=import-error,no-name-in-module
 from gui.about import About # pylint: disable=import-error,no-name-in-module
 from modules.app_translation import _ # pylint: disable=import-error,no-name-in-module
+from modules.check_updates import CheckUpdates # pylint: disable=import-error,no-name-in-module
 
 
 
@@ -63,6 +64,9 @@ class StopSmokingApp(tk.Frame):
         # Bind the alt key to show/hide the menu
         self.master.bind("<Alt_L>", self.toggle_menu)
 
+        # Check for updates
+        CheckUpdates(self.master)
+
 
     def create_widgets(self):
         """Create the widgets."""
@@ -102,13 +106,13 @@ class StopSmokingApp(tk.Frame):
         """Create the menu"""
 
         # Create the menu
-        self.menu = tk.Menu(self.master)
+        self.menu = tk.Menu(self.master) # pylint: disable=attribute-defined-outside-init
         self.master.config(menu=self.menu)
 
         # Add the menu items
-        self.file_menu = tk.Menu(self.menu, tearoff=0)
-        self.language_menu = tk.Menu(self.menu)
-        self.help_menu = tk.Menu(self.menu)
+        self.file_menu = tk.Menu(self.menu, tearoff=0) # pylint: disable=attribute-defined-outside-init
+        self.language_menu = tk.Menu(self.menu) # pylint: disable=attribute-defined-outside-init
+        self.help_menu = tk.Menu(self.menu) # pylint: disable=attribute-defined-outside-init
 
 
         # Add the file menu items
