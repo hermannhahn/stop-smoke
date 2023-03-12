@@ -1,13 +1,13 @@
-# Italian translations for 1.5.2 package.
-# Copyright (C) 2023 THE 1.5.2'S COPYRIGHT HOLDER
+# Italian translations for 1.5.3 package.
+# Copyright (C) 2023 THE 1.5.3'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the update package.
 # Automatically generated, 2023.
-#
+# 
 msgid ""
 msgstr ""
-"Project-Id-Version: 1.5.2\n"
+"Project-Id-Version: 1.5.3\n"
 "Report-Msgid-Bugs-To: hermann.h.hahn@gmail.com\n"
-"POT-Creation-Date: 2023-03-11 17:24-0300\n"
+"POT-Creation-Date: 2023-03-11 22:01-0300\n"
 "PO-Revision-Date: 2023-03-11 17:24-0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"

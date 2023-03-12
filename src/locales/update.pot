@@ -6,10 +6,10 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: 1.5.2\n"
+"Project-Id-Version: 1.5.3\n"
 "Report-Msgid-Bugs-To: hermann.h.hahn@gmail.com\n"
-"POT-Creation-Date: 2023-03-11 20:05-0300\n"
-"PO-Revision-Date: 2023-03-11 20:05-0300\n"
+"POT-Creation-Date: 2023-03-11 22:58-0300\n"
+"PO-Revision-Date: 2023-03-11 22:58-0300\n"
 "Last-Translator: Hermann Hahn <hermann.h.hahn@gmail.com>\n"
 "Language-Team: NO-TEAM <hermann.h.hahn@gmail.com>\n"
 "Language: en\n"

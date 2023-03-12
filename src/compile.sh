@@ -92,7 +92,7 @@ if [ "$TRANSLATION" = true ]; then
     # Update translation files
     echoo "Updating translation files..."
     cd locales
-    ./update.sh $VERSION
+    ./update_translation.sh $VERSION
     cd ..
     echog "Translation files updated successfully!"
 
@@ -123,7 +123,8 @@ if [ "$INSTALL" = true ]; then
 
     # Delete old files
     echoo "Deleting old install files..."
-    rm -rf ../install/*
+    rm -rf ../install
+    mkdir ../install
     echog "Old install files deleted successfully!"
 
     # Create zip file
@@ -137,7 +138,7 @@ if [ "$INSTALL" = true ]; then
     # Create installer
     echoo "Creating installer..."
     cd installer
-    ./update.sh $VERSION
+    ./update_install.sh $VERSION
     cd ..
     echog "Installer updated successfully!"
 fi

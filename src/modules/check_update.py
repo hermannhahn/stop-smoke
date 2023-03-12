@@ -24,7 +24,7 @@ class Update(tk.Frame):
 
         # Set variables
         self.local_version_file = "VERSION.md"
-        self.remote_version_url = "https://github.com/hermannhahn/stop-smoke/raw/main/VERSION.md"
+        self.remote_version_url ="https://raw.githubusercontent.com/hermannhahn/stop-smoke/main/src/VERSION.md"
 
         # Get versions
         self.local_version = self.get_local_version()
